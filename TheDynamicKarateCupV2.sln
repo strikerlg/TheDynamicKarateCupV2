@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{89940DA0-C5BE-4308-A421-E2E2E1AD45ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{14EDCF13-22C4-4830-813C-E6D4C3BF650B}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TheDynamicKarateCupV2", "src\TheDynamicKarateCupV2\TheDynamicKarateCupV2.xproj", "{E5844368-317B-4348-8FC8-4D53644E13E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5844368-317B-4348-8FC8-4D53644E13E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5844368-317B-4348-8FC8-4D53644E13E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5844368-317B-4348-8FC8-4D53644E13E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5844368-317B-4348-8FC8-4D53644E13E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5844368-317B-4348-8FC8-4D53644E13E1} = {89940DA0-C5BE-4308-A421-E2E2E1AD45ED}
+	EndGlobalSection
+EndGlobal
