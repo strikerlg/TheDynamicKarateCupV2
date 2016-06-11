@@ -46,13 +46,24 @@ namespace TheDynamicKarateCupV2.Controllers
                 return HttpNotFound();
             }
 
-            Competitor competitor = _context.Competitor.Single(m => m.CompetitorID == id);
+            CompetitorServices services = new CompetitorServices(_context);
+            Competitor competitor = services.GetCompetitor((int)id);
             if (competitor == null)
             {
                 return HttpNotFound();
             }
 
-            return View(competitor);
+            SecurityServices secServices = new SecurityServices(_context);
+            bool isValid = secServices.IsClubIDValidToClubNumber(competitor.ClubID, User.Identity.Name);
+
+            if (isValid == true)
+            {
+                return View(competitor);
+            }
+            else
+            {
+                return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+            }  
         }
 
         // GET: Competitors/Create
@@ -114,8 +125,18 @@ namespace TheDynamicKarateCupV2.Controllers
             {
                 return HttpNotFound();
             }
-            //ViewData["ClubID"] = new SelectList(_context.Club, "ClubID", "Club", competitor.ClubID);
-            return View(competitor);
+
+            SecurityServices secServices = new SecurityServices(_context);
+            bool isValid = secServices.IsClubIDValidToClubNumber(competitor.ClubID, User.Identity.Name);
+
+            if (isValid == true)
+            {
+                return View(competitor);
+            }
+            else
+            {
+                return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+            }
         }
 
         // POST: Competitors/Edit/5
@@ -125,11 +146,20 @@ namespace TheDynamicKarateCupV2.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Update(competitor);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                SecurityServices secServices = new SecurityServices(_context);
+                bool isValid = secServices.IsClubIDValidToClubNumber(competitor.ClubID, User.Identity.Name);
+
+                if (isValid == true)
+                {
+                    CompetitorServices services = new CompetitorServices(_context);
+                    services.UpdateCompetitor(competitor);
+                    return RedirectToAction("Index", competitor.ClubID);
+                }
+                else
+                {
+                    return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+                }               
             }
-            ViewData["ClubID"] = new SelectList(_context.Club, "ClubID", "Club", competitor.ClubID);
             return View(competitor);
         }
 
@@ -148,21 +178,37 @@ namespace TheDynamicKarateCupV2.Controllers
                 return HttpNotFound();
             }
 
-            return View(competitor);
+            SecurityServices secServices = new SecurityServices(_context);
+            bool isValid = secServices.IsClubIDValidToClubNumber(competitor.ClubID, User.Identity.Name);
+
+            if (isValid == true)
+            {
+                return View(competitor);
+            }
+            else
+            {
+                return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+            } 
         }
 
         // POST: Competitors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(Competitor competitor)
         {
-            CompetitorServices competitorServices = new CompetitorServices(_context);
-            Competitor competitor = competitorServices.GetCompetitor(id);
-            competitorServices.DeleteCompetitor(competitor);
+            SecurityServices secServices = new SecurityServices(_context);
+            bool isValid = secServices.IsClubIDValidToClubNumber(competitor.ClubID, User.Identity.Name);
 
-            return RedirectToAction("Index");
+            if (isValid == true)
+            {
+                CompetitorServices competitorServices = new CompetitorServices(_context);
+                competitorServices.DeleteCompetitor(competitor);
+                return RedirectToAction("Index", competitor.ClubID);
+            }
+            else
+            {
+                return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+            }
         }
     }
 }
-
-// ViewData["ClubID"] = new SelectList(_context.Club, "ClubID", "Club", competitorsVM.Competitor.ClubID);

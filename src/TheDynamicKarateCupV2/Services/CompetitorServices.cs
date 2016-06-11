@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Data.Entity;
 using TheDynamicKarateCupV2.Models;
 
 namespace TheDynamicKarateCupV2.Services
@@ -18,6 +19,14 @@ namespace TheDynamicKarateCupV2.Services
         public void SaveCompetitor(Competitor competitor)
         {
             _context.Competitor.Add(competitor);
+            _context.SaveChanges();
+        }
+
+        public void UpdateCompetitor(Competitor competitor)
+        {
+            //Hack to counter dependency injection problem
+            Competitor origCompetitor = _context.Competitor.AsNoTracking<Competitor>().SingleOrDefault(c => c.CompetitorID == competitor.CompetitorID);
+            _context.Entry<Competitor>(origCompetitor).Context.Update<Competitor>(competitor);
             _context.SaveChanges();
         }
 
