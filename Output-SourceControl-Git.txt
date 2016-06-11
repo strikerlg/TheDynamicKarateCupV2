@@ -1,0 +1,3 @@
+﻿Opening repositories:
+C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2
+Commit 6ddecfa4 created locally in repository c:\users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2
