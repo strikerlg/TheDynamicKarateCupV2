@@ -1,0 +1,14 @@
+﻿@model int
+
+<br />
+<br />
+@Html.ActionLink("Club Info (UPDATE)", "Edit", "Club", new {clubID = Model}, new { @class = "btn btn-primary btn-lg" })
+<br />
+<br />
+
+@Html.ActionLink("Competitors Info (ADD / UPDATE / DELETE)", "Index", "Competitors", new { clubID = Model }, new { @class = "btn btn-primary btn-lg" })
+<br />
+<br />
+
+@Html.ActionLink("Coach Info  (ADD / UPDATE / DELETE)", "Index", "Coach", new { clubID = Model }, new { @class = "btn btn-primary btn-lg" })
+

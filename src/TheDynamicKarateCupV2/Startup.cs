@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TheDynamicKarateCupV2.Models;
 using TheDynamicKarateCupV2.Services;
+using Microsoft.AspNet.Mvc.Filters;
+using Microsoft.AspNet.Authorization;
 
 namespace TheDynamicKarateCupV2
 {
@@ -48,7 +50,8 @@ namespace TheDynamicKarateCupV2
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
+            //Only authenticated users
+            services.AddMvc(setup => setup.Filters.Add(new AuthorizeFilter(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build())));
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();

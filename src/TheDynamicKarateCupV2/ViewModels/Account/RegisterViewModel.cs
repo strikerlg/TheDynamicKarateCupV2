@@ -9,6 +9,10 @@ namespace TheDynamicKarateCupV2.ViewModels.Account
     public class RegisterViewModel
     {
         [Required]
+        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Clubnumber must exists of 4 digits")]
+        public string ClubNumber { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

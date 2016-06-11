@@ -1,0 +1,58 @@
+@model IEnumerable<TheDynamicKarateCupV2.Models.Club>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<br />
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClubName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClubNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResponsibleCellullar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResponsibleEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResponsibleName)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClubName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClubNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResponsibleCellullar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResponsibleEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResponsibleName)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.ClubID">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.ClubID">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.ClubID">Delete</a>
+        </td>
+    </tr>
+}
+</table>

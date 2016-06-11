@@ -1,0 +1,9 @@
+﻿1>------ Rebuild All started: Project: TheDynamicKarateCupV2, Configuration: Debug Any CPU ------
+1>
+1>  Build succeeded.
+1>           0 Warning(s).
+1>           0 Error(s).
+1>
+1>  Time elapsed 00:00:00.4900981
+1>
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========

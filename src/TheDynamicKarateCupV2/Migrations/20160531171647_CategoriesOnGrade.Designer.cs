@@ -8,9 +8,10 @@ using TheDynamicKarateCupV2.Models;
 namespace TheDynamicKarateCupV2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160531171647_CategoriesOnGrade")]
+    partial class CategoriesOnGrade
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")

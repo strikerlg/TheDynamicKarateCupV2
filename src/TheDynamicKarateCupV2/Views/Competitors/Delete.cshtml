@@ -1,0 +1,64 @@
+@model TheDynamicKarateCupV2.Models.Competitor
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Competitor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeCategory)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AgeCategory)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetitorFirstNameName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetitorFirstNameName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetitorFirstname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetitorFirstname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetitorName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetitorName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LicenseNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LicenseNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

@@ -8,9 +8,10 @@ using TheDynamicKarateCupV2.Models;
 namespace TheDynamicKarateCupV2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160427203025_list")]
+    partial class list
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -146,16 +147,6 @@ namespace TheDynamicKarateCupV2.Migrations
                     b.HasAnnotation("Relational:TableName", "AspNetUsers");
                 });
 
-            modelBuilder.Entity("TheDynamicKarateCupV2.Models.Category", b =>
-                {
-                    b.Property<int>("CategoryID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Discipline");
-
-                    b.HasKey("CategoryID");
-                });
-
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.Club", b =>
                 {
                     b.Property<int>("ClubID")
@@ -213,9 +204,6 @@ namespace TheDynamicKarateCupV2.Migrations
                     b.Property<string>("CompetitorName")
                         .IsRequired();
 
-                    b.Property<string>("Disciplines")
-                        .IsRequired();
-
                     b.Property<string>("Level")
                         .IsRequired();
 
@@ -226,15 +214,6 @@ namespace TheDynamicKarateCupV2.Migrations
                         .IsRequired();
 
                     b.HasKey("CompetitorID");
-                });
-
-            modelBuilder.Entity("TheDynamicKarateCupV2.Models.CompetitorCategory", b =>
-                {
-                    b.Property<int>("CompetitorID");
-
-                    b.Property<int>("CategoryID");
-
-                    b.HasKey("CompetitorID", "CategoryID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
@@ -281,17 +260,6 @@ namespace TheDynamicKarateCupV2.Migrations
                     b.HasOne("TheDynamicKarateCupV2.Models.Club")
                         .WithMany()
                         .HasForeignKey("ClubID");
-                });
-
-            modelBuilder.Entity("TheDynamicKarateCupV2.Models.CompetitorCategory", b =>
-                {
-                    b.HasOne("TheDynamicKarateCupV2.Models.Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryID");
-
-                    b.HasOne("TheDynamicKarateCupV2.Models.Competitor")
-                        .WithMany()
-                        .HasForeignKey("CompetitorID");
                 });
         }
     }
