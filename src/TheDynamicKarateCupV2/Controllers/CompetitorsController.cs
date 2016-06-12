@@ -200,9 +200,10 @@ namespace TheDynamicKarateCupV2.Controllers
 
             if (isValid == true)
             {
+                int clubID = competitor.ClubID;
                 CompetitorServices competitorServices = new CompetitorServices(_context);
                 competitorServices.DeleteCompetitor(competitor);
-                return RedirectToAction("Index", competitor.ClubID);
+                return RedirectToAction("Index", clubID);
             }
             else
             {
