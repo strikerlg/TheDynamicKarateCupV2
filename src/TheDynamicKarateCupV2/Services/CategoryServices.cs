@@ -27,6 +27,7 @@ namespace TheDynamicKarateCupV2.Services
         {
             List<CompetitorCategory> cclist = _context.Set<CompetitorCategory>().Where(cc => cc.CompetitorID == competitor.CompetitorID).ToList<CompetitorCategory>();
             _context.Set<CompetitorCategory>().RemoveRange(cclist);
+            competitor.CompetitorCategories = new List<CompetitorCategory>();
         }
 
         #region Private methods
