@@ -697,7 +697,7 @@ namespace TheDynamicKarateCupV2.Services
             {
                 if (competitor.Disciplines == "Kata & Kumite" || competitor.Disciplines == "Kata")
                 {
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "OpenKataMen");
+                    var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "OpenKataMen");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
