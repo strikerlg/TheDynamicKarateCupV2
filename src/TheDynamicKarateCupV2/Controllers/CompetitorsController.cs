@@ -164,7 +164,6 @@ namespace TheDynamicKarateCupV2.Controllers
         }
 
         // GET: Competitors/Delete/5
-        [ActionName("Delete")]
         public IActionResult Delete(int? id)
         {
             if (id == null)
@@ -191,10 +190,10 @@ namespace TheDynamicKarateCupV2.Controllers
             } 
         }
 
-        // POST: Competitors/Delete/5
-        [HttpPost, ActionName("Delete")]
+        // POST: Competitors/Delete/Competitor
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(Competitor competitor)
+        public IActionResult Delete(Competitor competitor)
         {
             SecurityServices secServices = new SecurityServices(_context);
             bool isValid = secServices.IsClubIDValidToClubNumber(competitor.ClubID, User.Identity.Name);

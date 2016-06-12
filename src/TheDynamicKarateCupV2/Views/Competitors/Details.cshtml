@@ -58,6 +58,6 @@
     </dl>
 </div>
 <p>
-    <a asp-action="Edit" asp-route-id="@Model.CompetitorID">Edit</a> |
-    <a asp-action="Index" asp-route-id="@Model.ClubID">Back to List</a>
+    <a asp-action="Edit" asp-controller="Competitors" asp-route-id="@Model.CompetitorID">Edit</a> |
+    <a asp-action="Index" asp-controller="Competitors" asp-route-clubID="@Model.ClubID">Back to List</a>
 </p>

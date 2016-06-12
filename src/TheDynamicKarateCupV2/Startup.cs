@@ -96,11 +96,12 @@ namespace TheDynamicKarateCupV2
             // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
 
             app.UseMvc(routes =>
-            {
+            {              
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                name: "default",
+                template: "{controller=Home}/{action=Index}/{id?}");
             });
+            
         }
 
         // Entry point for the application.

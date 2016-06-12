@@ -55,7 +55,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Sex)
                 </td>
-                <td></td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CompetitorID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CompetitorID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CompetitorID">Delete</a>
+                </td>
             </tr>
             { swFirst = false; }
         }
