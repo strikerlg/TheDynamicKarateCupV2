@@ -1,74 +1,79 @@
-@model TheDynamicKarateCupV2.Models.Competitor
+@model TheDynamicKarateCupV2.ViewModels.Competitors.CompetitorsViewModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit competitor</h2>
 
-<form asp-action="Edit">
-    <div class="form-horizontal">
-        <h4>Competitor</h4>
-        <hr />
-        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
-        <input type="hidden" asp-for="CompetitorID" />
-        <input type="hidden" asp-for="ClubID" />
-        <div class="form-group">
-            <label asp-for="CompetitorFirstname" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CompetitorFirstname" class="form-control" />
-                <span asp-validation-for="CompetitorFirstname" class="text-danger" />
+    <form asp-action="Edit">
+        <div class="form-horizontal">
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Competitor.CompetitorFirstname" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Competitor.CompetitorFirstname" class="form-control" />
+                        <span asp-validation-for="Competitor.CompetitorFirstname" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Competitor.CompetitorName" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Competitor.CompetitorName" class="form-control" />
+                        <span asp-validation-for="Competitor.CompetitorName" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Competitor.Sex" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <select asp-for="Competitor.Sex" asp-items="Model.GetSex()"></select>
+                        <span asp-validation-for="Competitor.Sex" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Competitor.AgeCategory" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <select asp-for="Competitor.AgeCategory" asp-items="Model.GetAgeCategoryList()"></select>
+                        <span asp-validation-for="Competitor.AgeCategory" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Competitor.LicenseNumber" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Competitor.LicenseNumber" class="form-control" />
+                        <span asp-validation-for="Competitor.LicenseNumber" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Competitor.Level" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <select asp-for="Competitor.Level" asp-items="Model.GetLevelList()"></select>
+                        <span asp-validation-for="Competitor.Level" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Competitor.Disciplines" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <select asp-for="Competitor.Disciplines" asp-items="Model.GetSelectedDisciplines()"></select>
+                        <span asp-validation-for="Competitor.Disciplines" class="text-danger" />
+                    </div>
+                </div>
+                <input type="hidden" asp-for="Competitor.ClubID" /><input type="hidden" asp-for="Competitor.CompetitorID" />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Edit" class="btn btn-default" />
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CompetitorName" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CompetitorName" class="form-control" />
-                <span asp-validation-for="CompetitorName" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="AgeCategory" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="AgeCategory" class="form-control" />
-                <span asp-validation-for="AgeCategory" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Level" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Level" class="form-control" />
-                <span asp-validation-for="Level" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="LicenseNumber" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="LicenseNumber" class="form-control" />
-                <span asp-validation-for="LicenseNumber" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Sex" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Sex" class="form-control" />
-                <span asp-validation-for="Sex" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-</form>
+        </form>
 
-<div>
-    <a asp-action="Index" asp-route-clubID="@Model.ClubID">Back to List</a>
-</div>
+        <div>
+            <a asp-action="Index" asp-route-clubID="@Model.Competitor.ClubID">Back to List</a>
+        </div>
 
-@section Scripts {
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-}
+        @section Scripts {
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+            <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        }

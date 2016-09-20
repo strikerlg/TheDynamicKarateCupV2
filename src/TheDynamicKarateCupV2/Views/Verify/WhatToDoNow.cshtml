@@ -1,14 +1,14 @@
 ﻿@model int
-
 <br />
 <br />
-@Html.ActionLink("Club Info (UPDATE)", "Edit", "Club", new {clubID = Model}, new { @class = "btn btn-primary btn-lg" })
-<br />
-<br />
-
-@Html.ActionLink("Competitors Info (ADD / UPDATE / DELETE)", "Index", "Competitors", new { clubID = Model }, new { @class = "btn btn-primary btn-lg" })
-<br />
-<br />
-
-@Html.ActionLink("Coach Info  (ADD / UPDATE / DELETE)", "Index", "Coach", new { clubID = Model }, new { @class = "btn btn-primary btn-lg" })
-
+<div class="row text-center">
+    <div class="col-md-12">
+        <a asp-action="Edit" asp-controller="Club" asp-route-clubID="@Model" class="btn-primary btn-lg">Club Info (UPDATE)</a>
+        <br />
+        <br />
+        <a asp-action="Index" asp-controller="Competitors" asp-route-clubID="@Model" class="btn-primary btn-lg">Competitors Info (ADD / UPDATE / DELETE)</a>
+        <br />
+        <br />
+        <a asp-action="Index" asp-controller="Coaches" asp-route-clubID="@Model" class="btn-primary btn-lg">Coach Info  (ADD / UPDATE / DELETE)</a>
+    </div>
+</div>

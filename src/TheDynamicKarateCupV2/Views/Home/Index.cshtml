@@ -1,13 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="row text-center">
-    <div class="col-md-12">
-        <h1>The Dynamic Karate Cup</h1>
-        <br/>
-        <a asp-controller="Verify" asp-action="CheckRegistration" class="btn btn-primary btn-lg">Subscribe</a>
-        <br/>
-        <br />
+<br/>
+<div class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h1>The Dynamic Karate Cup <small>- 30/10/2016</small></h1></div>
+                    <div class="panel-body">
+                        <h4>Sporthal Hernekouter</h4>
+                        <h4>Hernekouter 1</h4>
+                        <h4>1540 HERNE</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <a asp-controller="Verify" asp-action="CheckRegistration" class="btn btn-primary btn-lg">Subscribe</a>
 </div>

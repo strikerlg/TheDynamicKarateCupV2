@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -36,13 +36,13 @@ namespace TheDynamicKarateCupV2.ViewModels.Competitors
         public List<SelectListItem> GetAgeCategoryList()
         {
             return new List<SelectListItem>{
-                                            new SelectListItem { Text = "2006 - 2007", Value = "Pupillen"},
-                                            new SelectListItem { Text = "2004 - 2005", Value = "Preminiemen"},
-                                            new SelectListItem { Text = "2002 - 2003", Value = "Miniemen"},
-                                            new SelectListItem { Text = "2000 - 2001", Value = "Kadetten"},
-                                            new SelectListItem { Text = "1998 - 1999", Value = "Scholieren"},
-                                            new SelectListItem { Text = "1995 - 1996 - 1997", Value = "Junioren"},
-                                            new SelectListItem { Text = "1994 and before", Value = "Senioren"}
+                                            new SelectListItem { Text = "2006 - 2007", Value = "Pupils"},
+                                            new SelectListItem { Text = "2004 - 2005", Value = "Preminims"},
+                                            new SelectListItem { Text = "2002 - 2003", Value = "Minims"},
+                                            new SelectListItem { Text = "2000 - 2001", Value = "Cadets"},
+                                            new SelectListItem { Text = "1998 - 1999", Value = "Students"},
+                                            new SelectListItem { Text = "1995 - 1996 - 1997", Value = "Juniors"},
+                                            new SelectListItem { Text = "1994 and before", Value = "Seniors"}
                                            };
         }
 

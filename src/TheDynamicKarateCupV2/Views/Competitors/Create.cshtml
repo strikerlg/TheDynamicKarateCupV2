@@ -4,13 +4,13 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create competitor</h2>
 
 <form asp-action="Create">
     <div class="form-horizontal">
         <h4>Competitor</h4>
         <hr />
-        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <label asp-for="Competitor.CompetitorFirstname" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -43,6 +43,7 @@
             <label asp-for="Competitor.LicenseNumber" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="Competitor.LicenseNumber" class="form-control" />
+                !!! When license is in application fill in 0 !!! <br />
                 <span asp-validation-for="Competitor.LicenseNumber" class="text-danger" />
             </div>
         </div>
@@ -63,7 +64,7 @@
         <input type="hidden" asp-for="Competitor.ClubID" />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>

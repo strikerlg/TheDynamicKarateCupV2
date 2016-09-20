@@ -1,9 +1,329 @@
-﻿1>------ Rebuild All started: Project: TheDynamicKarateCupV2, Configuration: Debug Any CPU ------
+﻿1>------ Build started: Project: TheDynamicKarateCupV2, Configuration: Release Any CPU ------
+1>  C:\Program Files\dotnet\dotnet.exe build "C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2" --configuration Release --no-dependencies
+1>  Project TheDynamicKarateCupV2 (.NETFramework,Version=v4.5.1) will be compiled because expected outputs are missing
+1>  Compiling TheDynamicKarateCupV2 for .NETFramework,Version=v4.5.1
+1>  Compilation succeeded.
+1>      0 Warning(s)
+1>      0 Error(s)
+1>  Time elapsed 00:00:07.2724695
 1>
-1>  Build succeeded.
-1>           0 Warning(s).
-1>           0 Error(s).
-1>
-1>  Time elapsed 00:00:00.4900981
-1>
-========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========
+2>------ Publish started: Project: TheDynamicKarateCupV2, Configuration: Release Any CPU ------
+Connecting to C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\.\bin\Release\PublishOutput...
+rmdir /S /Q "C:\Users\tomva\AppData\Local\Temp\PublishTemp\TheDynamicKarateCupV2128\"
+Environment variables:
+Path=.\node_modules\.bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External;%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External\git
+C:\Program Files\dotnet\dotnet.exe publish "C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2" --framework net451 --runtime win10-x64 --output "C:\Users\tomva\AppData\Local\Temp\PublishTemp\TheDynamicKarateCupV2128" --configuration Release --no-build
+Publishing TheDynamicKarateCupV2 for .NETFramework,Version=v4.5.1/win10-x64
+npm WARN EPACKAGEJSON ASP.NET@0.0.0 No description
+npm WARN EPACKAGEJSON ASP.NET@0.0.0 No repository field.
+npm WARN EPACKAGEJSON ASP.NET@0.0.0 No license field.
+[21:26:00] Using gulpfile ~\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\gulpfile.js
+[21:26:00] Starting 'clean:js'...
+[21:26:00] Starting 'clean:css'...
+[21:26:00] Finished 'clean:js' after 6.3 ms
+[21:26:00] Finished 'clean:css' after 5.47 ms
+[21:26:00] Starting 'clean'...
+[21:26:00] Finished 'clean' after 9.12 μs
+[21:26:03] Using gulpfile ~\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\gulpfile.js
+[21:26:03] Starting 'min:js'...
+[21:26:03] Starting 'min:css'...
+[21:26:03] Finished 'min:js' after 
+[21:26:03] Finished 'min:css' after 
+[21:26:03] Starting 'min'...
+[21:26:03] Finished 'min' after 63 μs
+Configuring the following project for use with IIS: 'C:\Users\tomva\AppData\Local\Temp\PublishTemp\TheDynamicKarateCupV2128'
+Updating web.config at 'C:\Users\tomva\AppData\Local\Temp\PublishTemp\TheDynamicKarateCupV2128\web.config'
+Configuring project completed successfully
+publish: Published to C:\Users\tomva\AppData\Local\Temp\PublishTemp\TheDynamicKarateCupV2128
+Published 1/1 projects successfully
+Publishing with publish method [FileSystem]
+Publishing files to C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput
+Executing command ["C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -source:manifest='C:\Users\tomva\AppData\Local\Temp\PublishTemp\obj\TheDynamicKarateCupV2128\SourceManifest.xml' -dest:manifest='C:\Users\tomva\AppData\Local\Temp\PublishTemp\obj\TheDynamicKarateCupV2128\DestinationManifest.xml' -verb:sync -retryAttempts:20 -disablerule:BackupRule]
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\appsettings.json).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\dotnet-razor-tooling.exe).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\ICSharpCode.SharpZipLib.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\libuv.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Antiforgery.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Authentication.Cookies.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Authentication.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Authorization.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Cors.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Cryptography.Internal.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.DataProtection.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.DataProtection.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Diagnostics.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Diagnostics.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Hosting.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Hosting.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Html.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Http.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Http.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Http.Extensions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Http.Features.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.HttpOverrides.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Identity.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.JsonPatch.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Localization.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.ApiExplorer.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.Core.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.Cors.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.DataAnnotations.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.Formatters.Json.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.Localization.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.Razor.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.Razor.Host.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.TagHelpers.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Mvc.ViewFeatures.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Razor.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Razor.Runtime.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Routing.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Routing.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Server.IISIntegration.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.Server.Kestrel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.StaticFiles.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.AspNetCore.WebUtilities.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.CodeAnalysis.CSharp.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.CodeAnalysis.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.DotNet.Cli.Utils.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.DotNet.InternalAbstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.DotNet.ProjectModel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.EntityFrameworkCore.Design.Core.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.EntityFrameworkCore.Design.exe).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.EntityFrameworkCore.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.EntityFrameworkCore.Relational.Design.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.EntityFrameworkCore.Relational.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.EntityFrameworkCore.SqlServer.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.EntityFrameworkCore.Tools.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Caching.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Caching.Memory.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.CommandLineUtils.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Configuration.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Configuration.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Configuration.EnvironmentVariables.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Configuration.FileExtensions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Configuration.Json.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Configuration.UserSecrets.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.DependencyInjection.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.DependencyInjection.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.DependencyModel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.FileProviders.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.FileProviders.Composite.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.FileProviders.Physical.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.FileSystemGlobbing.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Globalization.CultureInfoCache.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Localization.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Localization.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Logging.Abstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Logging.Console.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Logging.Debug.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Logging.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.ObjectPool.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Options.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.PlatformAbstractions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.Primitives.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Extensions.WebEncoders.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.Net.Http.Headers.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Microsoft.VisualStudio.Web.BrowserLink.Loader.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Newtonsoft.Json.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NPOI.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NPOI.OOXML.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NPOI.OpenXml4Net.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NPOI.OpenXmlFormats.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Common.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Configuration.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.DependencyResolver.Core.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Frameworks.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.LibraryModel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Packaging.Core.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Packaging.Core.Types.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Packaging.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.ProjectModel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Protocol.Core.Types.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Protocol.Core.v3.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Repositories.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.RuntimeModel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\NuGet.Versioning.dll).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\Microsoft.CSharp.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\mscorlib.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Collections.Concurrent.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Collections.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.ComponentModel.DataAnnotations.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.ComponentModel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.ComponentModel.Primitives.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.ComponentModel.TypeConverter.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Configuration.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Core.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Data.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Diagnostics.Contracts.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Diagnostics.Debug.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Diagnostics.Tracing.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Globalization.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.IdentityModel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.IO.Compression.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.IO.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Linq.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Linq.Expressions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Linq.Queryable.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Net.Http.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Net.Http.WebRequest.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Numerics.Vectors.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.ObjectModel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Reflection.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Reflection.Extensions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Reflection.Primitives.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Resources.ResourceManager.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Runtime.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Runtime.Extensions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Runtime.InteropServices.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Runtime.InteropServices.RuntimeInformation.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Runtime.Serialization.Primitives.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Security.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.ServiceModel.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Text.Encoding.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Text.Encoding.Extensions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Threading.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Threading.Tasks.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Transactions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Xml.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\System.Xml.Linq.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\refs\TheDynamicKarateCupV2.exe).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Remotion.Linq.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.Buffers.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.Collections.Immutable.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.ComponentModel.Primitives.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.ComponentModel.TypeConverter.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.Diagnostics.DiagnosticSource.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.Interactive.Async.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.Numerics.Vectors.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.Reflection.Metadata.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.Runtime.InteropServices.RuntimeInformation.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.Text.Encodings.Web.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\System.Threading.Tasks.Extensions.dll).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\TheDynamicKarateCupV2.exe).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\TheDynamicKarateCupV2.exe.config).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\TheDynamicKarateCupV2.pdb).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\ConfirmEmail.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\ExternalLoginConfirmation.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\ExternalLoginFailure.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\ForgotPassword.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\ForgotPasswordConfirmation.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\Lockout.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\Login.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\Register.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\ResetPassword.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\ResetPasswordConfirmation.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\SendCode.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Account\VerifyCode.cshtml).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Club).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Club\Create.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Club\Edit.cshtml).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Coaches).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Coaches\Create.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Coaches\Delete.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Coaches\Edit.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Coaches\Index.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Coaches\Submit.cshtml).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Competitors).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Competitors\Create.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Competitors\Delete.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Competitors\Edit.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Competitors\Index.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Competitors\Submit.cshtml).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Home).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Home\Contact.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Home\Error.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Home\Index.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Home\Reports.cshtml).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Manage).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Manage\AddPhoneNumber.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Manage\ChangePassword.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Manage\Index.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Manage\ManageLogins.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Manage\SetPassword.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Manage\VerifyPhoneNumber.cshtml).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Shared).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Shared\Error.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Shared\_Layout.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Shared\_LoginPartial.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Shared\_ValidationScriptsPartial.cshtml).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Verify).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Verify\WhatToDoNow.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\Verify\YouCanOnlyLookUpYourOwnData.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\_ViewImports.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\Views\_ViewStart.cshtml).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\web.config).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\css).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\css\site.css).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\css\site.min.css).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\favicon.ico).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\images).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\images\CeremonieBanner.jpg).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\images\KataBanner.jpg).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\images\KumiteBanner.jpg).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\images\PodiumBanner.jpg).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\images\ScheidsrechterBanner.jpg).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\images\VrijwilligersBanner.jpg).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\index.html).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\js\site.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\js\site.min.js).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\.bower.json).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\css).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\css\bootstrap.css).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\fonts).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\js\bootstrap.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\dist\js\npm.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\bootstrap\LICENSE).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery\.bower.json).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery\dist).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery\dist\jquery.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery\dist\jquery.min.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery\dist\jquery.min.map).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery\MIT-LICENSE.txt).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation\.bower.json).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation\dist).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation\dist\additional-methods.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation\dist\additional-methods.min.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation\dist\jquery.validate.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation\LICENSE.md).
+Info: Adding directory (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation-unobtrusive).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation-unobtrusive\.bower.json).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\web.config).
+Info: Adding file (C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\bin\Release\PublishOutput\wwwroot\_references.js).
+Total changes: 282 (282 added, 0 deleted, 0 updated, 0 parameters changed, 34294453 bytes copied)
+
+Web App was published successfully file:///C:/Users/tomva/documents/visual%20studio%202015/Projects/TheDynamicKarateCupV2/src/TheDynamicKarateCupV2/bin/Release/PublishOutput
+
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Publish: 1 succeeded, 0 failed, 0 skipped ==========

@@ -1,6 +1,6 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 20px; 
 }
 
 /* Wrapping element */
@@ -31,4 +31,14 @@ textarea {
     .carousel-caption {
         z-index: 10 !important;
     }
+}
+
+.carousel-inner{
+  min-width:100%;
+  padding: 0;
+}
+
+.banner-pictures{
+    min-width:100%;
+    padding: 0;
 }

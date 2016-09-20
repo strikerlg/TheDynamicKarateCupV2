@@ -1,8 +1,7 @@
-using System.Linq;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
+using Microsoft.AspNetCore.Mvc;
 using TheDynamicKarateCupV2.Models;
+using TheDynamicKarateCupV2.Services;
+using TheDynamicKarateCupV2.ViewModels.Coaches;
 
 namespace TheDynamicKarateCupV2.Controllers
 {
@@ -16,48 +15,62 @@ namespace TheDynamicKarateCupV2.Controllers
         }
 
         // GET: Coaches
-        public IActionResult Index()
+        public IActionResult Index(int clubID)
         {
-            var applicationDbContext = _context.Coach.Include(c => c.Club);
-            return View(applicationDbContext.ToList());
-        }
+            SecurityServices secServices = new SecurityServices(_context);
+            bool isValid = secServices.IsClubIDValidToClubNumber(clubID, User.Identity.Name);
 
-        // GET: Coaches/Details/5
-        public IActionResult Details(int? id)
-        {
-            if (id == null)
+            if (isValid == true)
             {
-                return HttpNotFound();
+                CoachServices coachServices = new CoachServices(_context);
+                CoachesViewModel coachesViewModel = coachServices.CreateCoachesViewModel(clubID);
+                return View(coachesViewModel);
             }
-
-            Coach coach = _context.Coach.Single(m => m.CoachID == id);
-            if (coach == null)
+            else
             {
-                return HttpNotFound();
+                return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
             }
-
-            return View(coach);
         }
 
         // GET: Coaches/Create
-        public IActionResult Create()
+        public IActionResult Create(int clubID)
         {
-            ViewData["ClubID"] = new SelectList(_context.Club, "ClubID", "Club");
-            return View();
+            SecurityServices secServices = new SecurityServices(_context);
+            bool isValid = secServices.IsClubIDValidToClubNumber(clubID, User.Identity.Name);
+
+            if (isValid == true)
+            {
+                Coach coach = new Coach();
+                coach.ClubID = clubID;
+                return View(coach);
+            }
+            else
+            {
+                return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+            }
         }
 
         // POST: Coaches/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Coach coach)
+        public IActionResult Create([Bind("CoachFirstName, CoachName, LicenseNumber, ClubID")] Coach coach)
         {
             if (ModelState.IsValid)
             {
-                _context.Coach.Add(coach);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                SecurityServices secServices = new SecurityServices(_context);
+                bool isValid = secServices.IsClubIDValidToClubNumber(coach.ClubID, User.Identity.Name);
+
+                if (isValid == true)
+                {
+                    CoachServices coachServices = new CoachServices(_context);
+                    coachServices.SaveCoach(coach);
+                    return RedirectToAction("Index", new { clubID = coach.ClubID });
+                }
+                else
+                {
+                    return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+                }
             }
-            ViewData["ClubID"] = new SelectList(_context.Club, "ClubID", "Club", coach.ClubID);
             return View(coach);
         }
 
@@ -66,30 +79,50 @@ namespace TheDynamicKarateCupV2.Controllers
         {
             if (id == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
-            Coach coach = _context.Coach.Single(m => m.CoachID == id);
+            CoachServices services = new CoachServices(_context);
+            Coach coach = services.GetCoach((int)id);
             if (coach == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
-            ViewData["ClubID"] = new SelectList(_context.Club, "ClubID", "Club", coach.ClubID);
-            return View(coach);
+
+            SecurityServices secServices = new SecurityServices(_context);
+            bool isValid = secServices.IsClubIDValidToClubNumber(coach.ClubID, User.Identity.Name);
+
+            if (isValid == true)
+            {
+                return View(coach);
+            }
+            else
+            {
+                return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+            }
         }
 
         // POST: Coaches/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Coach coach)
+        public IActionResult Edit([Bind("CoachID, CoachFirstName, CoachName, LicenseNumber, ClubID")] Coach coach)
         {
             if (ModelState.IsValid)
             {
-                _context.Update(coach);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                SecurityServices secServices = new SecurityServices(_context);
+                bool isValid = secServices.IsClubIDValidToClubNumber(coach.ClubID, User.Identity.Name);
+
+                if (isValid == true)
+                {
+                    CoachServices services = new CoachServices(_context);
+                    services.UpdateCoach(coach);
+                    return RedirectToAction("Index", new { clubID = coach.ClubID });
+                }
+                else
+                {
+                    return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+                }
             }
-            ViewData["ClubID"] = new SelectList(_context.Club, "ClubID", "Club", coach.ClubID);
             return View(coach);
         }
 
@@ -99,27 +132,53 @@ namespace TheDynamicKarateCupV2.Controllers
         {
             if (id == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
-
-            Coach coach = _context.Coach.Single(m => m.CoachID == id);
+            CoachServices coachServices = new CoachServices(_context);
+            Coach coach = coachServices.GetCoach((int)id);
             if (coach == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
-            return View(coach);
+            SecurityServices secServices = new SecurityServices(_context);
+            bool isValid = secServices.IsClubIDValidToClubNumber(coach.ClubID, User.Identity.Name);
+
+            if (isValid == true)
+            {
+                return View(coach);
+            }
+            else
+            {
+                return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+            }
         }
 
-        // POST: Coaches/Delete/5
-        [HttpPost, ActionName("Delete")]
+        // POST: Coaches/Delete/Coach
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id)
+        public IActionResult Delete([Bind("CoachID, CoachFirstName, CoachName, LicenseNumber, ClubID")] Coach coach)
         {
-            Coach coach = _context.Coach.Single(m => m.CoachID == id);
-            _context.Coach.Remove(coach);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            SecurityServices secServices = new SecurityServices(_context);
+            bool isValid = secServices.IsClubIDValidToClubNumber(coach.ClubID, User.Identity.Name);
+
+            if (isValid == true)
+            {
+                int clubID = coach.ClubID;
+                CoachServices services = new CoachServices(_context);
+                services.DeleteCoach(coach);
+                return RedirectToAction("Index", new { clubID = clubID });
+            }
+            else
+            {
+                return RedirectToAction("YouCanOnlyLookUpYourOwnData", "Verify");
+            }
+        }
+
+        // GET: Coaches/Submit
+        public IActionResult Submit()
+        {
+            return View();
         }
     }
 }

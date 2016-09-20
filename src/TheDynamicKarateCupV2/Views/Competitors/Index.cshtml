@@ -1,41 +1,42 @@
 @model TheDynamicKarateCupV2.ViewModels.Competitors.CompetitorsClubIDViewModel
 
-@{bool swFirst = true; }
-
 @{
     ViewData["Title"] = "Index";
 }
 
+<br />
 <p>
-    @Html.ActionLink("Create new", "Create", "Competitors", new { clubID = Model.ClubID }, new { @class = "btn btn-primary btn-lg" })
+    <a asp-action ="Create" asp-controller="Competitors" asp-route-clubID="@Model.ClubID" class="btn btn-primary btn-lg">Create new competitor</a>
 </p>
     
     <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitors[0].AgeCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitors[0].CompetitorFirstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitors[0].CompetitorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitors[0].Level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitors[0].LicenseNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitors[0].Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitors[0].Disciplines)
+            </th>
+            <th></th>
+        </tr>
     @foreach (var item in Model.Competitors)
     {
-        @if (swFirst == true)
         {
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(modelItem => item.AgeCategory)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(modelItem => item.CompetitorFirstname)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(modelItem => item.CompetitorName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(modelItem => item.Level)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(modelItem => item.LicenseNumber)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(modelItem => item.Sex)
-                </th>
-                <th></th>
-            </tr>
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.AgeCategory)
@@ -54,42 +55,17 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Disciplines)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.CompetitorID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.CompetitorID">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.CompetitorID">Delete</a>
                 </td>
             </tr>
-            { swFirst = false; }
-        }
-        else
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AgeCategory)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CompetitorFirstname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CompetitorName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Level)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LicenseNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sex)
-                </td>
-                <td>
-                   <a asp-action="Edit" asp-route-id="@item.CompetitorID">Edit</a> |
-                   <a asp-action="Details" asp-route-id="@item.CompetitorID">Details</a> |
-                   <a asp-action="Delete" asp-route-id="@item.CompetitorID">Delete</a>
-                </td>
-                </tr>
           }
     }
-</table>
+    </table>
+<a asp-action="Submit" asp-controller="Competitors" class="btn btn-primary">Submit</a>
+<a asp-action="WhatToDoNow" asp-controller="Verify" asp-route-clubID="@Model.ClubID" class="btn btn-primary">Return</a>

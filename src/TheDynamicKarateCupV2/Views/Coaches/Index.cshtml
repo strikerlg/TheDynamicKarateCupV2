@@ -1,44 +1,45 @@
-@model IEnumerable<TheDynamicKarateCupV2.Models.Coach>
+@model TheDynamicKarateCupV2.ViewModels.Coaches.CoachesViewModel
 
 @{
     ViewData["Title"] = "Index";
 }
-
-<h2>Index</h2>
-
+<br />
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" asp-route-clubID="@Model.ClubID" class="btn btn-primary btn-lg">Create new coach</a>
+    <br />
+    <span class="label label-danger">@Model.InfoHowManyCoaches</span>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CoachFirstName)
+            @Html.DisplayNameFor(model => model.Coaches[0].CoachFirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CoachFirstNameName)
+            @Html.DisplayNameFor(model => model.Coaches[0].CoachName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CoachName)
+            @Html.DisplayNameFor(model => model.Coaches[0].LicenseNumber)
         </th>
         <th></th>
     </tr>
     
-@foreach (var item in Model) {
+@foreach (var item in Model.Coaches) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.CoachFirstName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CoachFirstNameName)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.CoachName)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.LicenseNumber)
+        </td>
+        <td>
             <a asp-action="Edit" asp-route-id="@item.CoachID">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.CoachID">Details</a> |
             <a asp-action="Delete" asp-route-id="@item.CoachID">Delete</a>
         </td>
     </tr>
 }
 </table>
+<a asp-action="Submit" asp-controller="Coaches" class="btn btn-primary">Submit</a>
+<a asp-action="WhatToDoNow" asp-controller="Verify" asp-route-clubID="@Model.ClubID" class="btn btn-primary">Return</a>

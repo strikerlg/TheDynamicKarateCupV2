@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,43 +27,44 @@ namespace TheDynamicKarateCupV2.Services
         {
             List<CompetitorCategory> cclist = _context.Set<CompetitorCategory>().Where(cc => cc.CompetitorID == competitor.CompetitorID).ToList<CompetitorCategory>();
             _context.Set<CompetitorCategory>().RemoveRange(cclist);
+            _context.SaveChanges();
             competitor.CompetitorCategories = new List<CompetitorCategory>();
         }
 
         #region Private methods
         private void DefineCategoriesOnAge(Competitor competitor)
         {
-            if (competitor.AgeCategory == "Pupillen")
+            if (competitor.AgeCategory == "Pupils")
             {
                 DefinePupilCategories(competitor);
             }
 
-            if (competitor.AgeCategory == "Preminiemen")
+            if (competitor.AgeCategory == "Preminims")
             {
                 DefinePreminimCategories(competitor);
             }
 
-            if (competitor.AgeCategory == "Miniemen")
+            if (competitor.AgeCategory == "Minims")
             {
                 DefineMinimeCategories(competitor);
             }
 
-            if (competitor.AgeCategory == "Kadetten")
+            if (competitor.AgeCategory == "Cadets")
             {
                 DefineCadetCategories(competitor);
             }
 
-            if (competitor.AgeCategory == "Scholieren")
+            if (competitor.AgeCategory == "Students")
             {
                 DefineStudentCategories(competitor);
             }
 
-            if (competitor.AgeCategory == "Junioren")
+            if (competitor.AgeCategory == "Juniors")
             {
                 DefineJuniorCategories(competitor);
             }
 
-            if (competitor.AgeCategory == "Senioren")
+            if (competitor.AgeCategory == "Seniors")
             {
                 DefineSeniorCategories(competitor);
             }
@@ -76,7 +77,7 @@ namespace TheDynamicKarateCupV2.Services
             {
                 #region Pupils Kata & Kumite -> Kata
                 //check of de kata discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "PupilsKataMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "PupilsKataMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -84,13 +85,13 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor          
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
                 #endregion
 
                 #region Pupils Kata & Kumite -> Kumite
                 //check of de kumite discipline bestaat 
-                category = _context.Category.AsNoTracking().Single(c => c.Discipline == "PupilsKumiteMixed");
+                category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "PupilsKumiteMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -98,8 +99,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
                 #endregion
             }
             #endregion
@@ -108,7 +109,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kata")
             {
                 //check of de kata discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "PupilsKataMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "PupilsKataMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -116,8 +117,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
 
@@ -125,7 +126,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kumite")
             {
                 //check of de kumite discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "PupilsKumiteMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "PupilsKumiteMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -133,8 +134,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
         }
@@ -146,7 +147,7 @@ namespace TheDynamicKarateCupV2.Services
             {
                 #region Preminims Kata & Kumite -> Kata
                 //check of de kata discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "PreminimsKataMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "PreminimsKataMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -154,13 +155,13 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
                 #endregion
 
                 #region Preminims Kata & Kumite -> Kumite
                 //check of de kumite discipline bestaat 
-                category = _context.Category.AsNoTracking().Single(c => c.Discipline == "PreminimsKumiteMixed");
+                category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "PreminimsKumiteMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -168,8 +169,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
                 #endregion
             }
             #endregion
@@ -178,7 +179,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kata")
             {
                 //check of de kata discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "PreminimsKataMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "PreminimsKataMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -186,8 +187,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
 
@@ -195,7 +196,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kumite")
             {
                 //check of de kumite discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "PreminimsKumiteMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "PreminimsKumiteMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -203,8 +204,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
         }
@@ -216,7 +217,7 @@ namespace TheDynamicKarateCupV2.Services
             {
                 #region Minims Kata & Kumite -> Kata
                 //check of de kata discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "MinimsKataMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "MinimsKataMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -224,13 +225,14 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
+                _context.SaveChanges();
                 #endregion
 
                 #region Minims Kata & Kumite -> Kumite
                 //check of de kumite discipline bestaat 
-                category = _context.Category.AsNoTracking().Single(c => c.Discipline == "MinimsKumiteMixed");
+                category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "MinimsKumiteMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -238,8 +240,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
                 #endregion
             }
             #endregion
@@ -248,7 +250,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kata")
             {
                 //check of de kata discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "MinimsKataMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "MinimsKataMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -256,8 +258,9 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
+                _context.SaveChanges();
             }
             #endregion
 
@@ -265,7 +268,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kumite")
             {
                 //check of de kumite discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "MinimsKumiteMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "MinimsKumiteMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -273,8 +276,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
         }
@@ -286,7 +289,7 @@ namespace TheDynamicKarateCupV2.Services
             {
                 #region Cadets Kata Mixed & Kumite Men & Kumite Ladies -> Kata Mixed
                 //check of de kata discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "CadetsKataMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "CadetsKataMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -294,15 +297,16 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
+                _context.SaveChanges();
                 #endregion
 
                 #region Cadets Kata Mixed & Kumite Men & Kumite Ladies -> Kumite Men
-                if(competitor.Sex == "Male")
+                if (competitor.Sex == "Male")
                 {
                     //check of de kumite discipline bestaat 
-                    category = _context.Category.AsNoTracking().Single(c => c.Discipline == "CadetsKumiteMen");
+                    category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "CadetsKumiteMen");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -310,8 +314,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
                 #endregion
 
@@ -319,7 +323,7 @@ namespace TheDynamicKarateCupV2.Services
                 if (competitor.Sex == "Female")
                 {
                     //check of de kumite discipline bestaat 
-                    category = _context.Category.AsNoTracking().Single(c => c.Discipline == "CadetsKumiteLadies");
+                    category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "CadetsKumiteLadies");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -327,8 +331,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
                 #endregion
             }
@@ -338,7 +342,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kata")
             {
                 //check of de kata discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "CadetsKataMixed");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "CadetsKataMixed");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -346,8 +350,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
 
@@ -355,7 +359,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kumite" && competitor.Sex == "Male")
             {
                 //check of de kumite discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "CadetsKumiteMen");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "CadetsKumiteMen");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -363,8 +367,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
 
@@ -372,7 +376,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kumite" && competitor.Sex == "Female")
             {
                 //check of de kumite discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "CadetsKumiteLadies");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "CadetsKumiteLadies");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -380,8 +384,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
         }
@@ -399,7 +403,7 @@ namespace TheDynamicKarateCupV2.Services
                 if (competitor.Sex == "Male")
                 {
                     //check of de kumite discipline bestaat 
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "StudentsKumiteMen");
+                    var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "StudentsKumiteMen");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -407,8 +411,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
                 #endregion
 
@@ -416,7 +420,7 @@ namespace TheDynamicKarateCupV2.Services
                 if (competitor.Sex == "Female")
                 {
                     //check of de kumite discipline bestaat 
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "StudentsKumiteLadies");
+                    var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "StudentsKumiteLadies");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -424,8 +428,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
                 #endregion
            }
@@ -435,7 +439,7 @@ namespace TheDynamicKarateCupV2.Services
             if(competitor.Disciplines == "Kumite" && competitor.Sex == "Male")
             {
                 //check of de kumite discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "StudentsKumiteMen");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "StudentsKumiteMen");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -443,8 +447,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
 
@@ -452,7 +456,7 @@ namespace TheDynamicKarateCupV2.Services
             if (competitor.Disciplines == "Kumite" && competitor.Sex == "Female")
             {
                 //check of de kumite discipline bestaat 
-                var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "StudentsKumiteLadies");
+                var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "StudentsKumiteLadies");
                 //als de discipline niet bestaat voeg ze toe
                 if (category == null)
                 {
@@ -460,8 +464,8 @@ namespace TheDynamicKarateCupV2.Services
                     _context.Category.Add(category);
                     _context.SaveChanges();
                 }
-                //voeg de categorie toe aan de competitor
-                competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                SaveCompetitorCategoryToJoinTable(competitor, category);
             }
             #endregion
         }
@@ -481,7 +485,7 @@ namespace TheDynamicKarateCupV2.Services
                     if (competitor.Sex == "Male")
                     {
                         //check of de kumite discipline bestaat 
-                        var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "JuniorsKumiteMen");
+                        var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "JuniorsKumiteMen");
                         //als de discipline niet bestaat voeg ze toe
                         if (category == null)
                         {
@@ -489,8 +493,8 @@ namespace TheDynamicKarateCupV2.Services
                             _context.Category.Add(category);
                             _context.SaveChanges();
                         }
-                        //voeg de categorie toe aan de competitor
-                        competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                        //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                        SaveCompetitorCategoryToJoinTable(competitor, category);
                     }
                     #endregion
 
@@ -498,7 +502,7 @@ namespace TheDynamicKarateCupV2.Services
                     if (competitor.Sex == "Female")
                     {
                         //check of de kumite discipline bestaat 
-                        var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "JuniorsKumiteLadies");
+                        var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "JuniorsKumiteLadies");
                         //als de discipline niet bestaat voeg ze toe
                         if (category == null)
                         {
@@ -506,8 +510,8 @@ namespace TheDynamicKarateCupV2.Services
                             _context.Category.Add(category);
                             _context.SaveChanges();
                         }
-                        //voeg de categorie toe aan de competitor
-                        competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                        //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                        SaveCompetitorCategoryToJoinTable(competitor, category);
                     }
                     #endregion
                 }
@@ -517,7 +521,7 @@ namespace TheDynamicKarateCupV2.Services
                 if (competitor.Disciplines == "Kumite" && competitor.Sex == "Male")
                 {
                     //check of de kumite discipline bestaat 
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "JuniorsKumiteMen");
+                    var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "JuniorsKumiteMen");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -525,8 +529,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
                 #endregion
 
@@ -534,7 +538,7 @@ namespace TheDynamicKarateCupV2.Services
                 if (competitor.Disciplines == "Kumite" && competitor.Sex == "Female")
                 {
                     //check of de kumite discipline bestaat 
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "JuniorsKumiteLadies");
+                    var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "JuniorsKumiteLadies");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -542,8 +546,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
                 #endregion
             }
@@ -564,7 +568,7 @@ namespace TheDynamicKarateCupV2.Services
                     if (competitor.Sex == "Male")
                     {
                         //check of de kumite discipline bestaat 
-                        var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "SeniorsKumiteMen");
+                        var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "SeniorsKumiteMen");
                         //als de discipline niet bestaat voeg ze toe
                         if (category == null)
                         {
@@ -572,8 +576,8 @@ namespace TheDynamicKarateCupV2.Services
                             _context.Category.Add(category);
                             _context.SaveChanges();
                         }
-                        //voeg de categorie toe aan de competitor
-                        competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                        //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                        SaveCompetitorCategoryToJoinTable(competitor, category);
                     }
                     #endregion
 
@@ -581,7 +585,7 @@ namespace TheDynamicKarateCupV2.Services
                     if (competitor.Sex == "Female")
                     {
                         //check of de kumite discipline bestaat 
-                        var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "SeniorsKumiteLadies");
+                        var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "SeniorsKumiteLadies");
                         //als de discipline niet bestaat voeg ze toe
                         if (category == null)
                         {
@@ -589,8 +593,8 @@ namespace TheDynamicKarateCupV2.Services
                             _context.Category.Add(category);
                             _context.SaveChanges();
                         }
-                        //voeg de categorie toe aan de competitor
-                        competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                        //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                        SaveCompetitorCategoryToJoinTable(competitor, category);
                     }
                     #endregion
                 }
@@ -600,7 +604,7 @@ namespace TheDynamicKarateCupV2.Services
                 if (competitor.Disciplines == "Kumite" && competitor.Sex == "Male")
                 {
                     //check of de kumite discipline bestaat 
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "SeniorsKumiteMen");
+                    var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "SeniorsKumiteMen");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -608,8 +612,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
                 #endregion
 
@@ -617,7 +621,7 @@ namespace TheDynamicKarateCupV2.Services
                 if (competitor.Disciplines == "Kumite" && competitor.Sex == "Female")
                 {
                     //check of de kumite discipline bestaat 
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "SeniorsKumiteLadies");
+                    var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "SeniorsKumiteLadies");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -625,8 +629,9 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
+                    _context.SaveChanges();
                 }
                 #endregion
             }
@@ -636,40 +641,46 @@ namespace TheDynamicKarateCupV2.Services
         {
             #region Blue belts Kata
             //blauwe gordels kata
-            if (competitor.Level == "5e Kyu" || competitor.Level == "4e Kyu")
+            if (competitor.AgeCategory == "Students" || competitor.AgeCategory == "Juniors" || competitor.AgeCategory == "Seniors")
             {
-                if (competitor.Disciplines == "Kata & Kumite" || competitor.Disciplines == "Kata")
+                if (competitor.Level == "5e Kyu" || competitor.Level == "4e Kyu")
                 {
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "BlueKataMixed");
-                    //als de discipline niet bestaat voeg ze toe
-                    if (category == null)
+                    if (competitor.Disciplines == "Kata & Kumite" || competitor.Disciplines == "Kata")
                     {
-                        category = new Category { Discipline = "BlueKataMixed" };
-                        _context.Category.Add(category);
-                        _context.SaveChanges();
+                        var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "BlueKataMixed");
+                        //als de discipline niet bestaat voeg ze toe
+                        if (category == null)
+                        {
+                            category = new Category { Discipline = "BlueKataMixed" };
+                            _context.Category.Add(category);
+                            _context.SaveChanges();
+                        }
+                        //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                        SaveCompetitorCategoryToJoinTable(competitor, category);
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
                 }
             }
             #endregion
 
             #region Brown belts Kata
             //bruine gordels kata
-            if (competitor.Level == "3e Kyu" || competitor.Level == "2e Kyu")
+            if (competitor.AgeCategory == "Students" || competitor.AgeCategory == "Juniors" || competitor.AgeCategory == "Seniors")
             {
-                if (competitor.Disciplines == "Kata & Kumite" || competitor.Disciplines == "Kata")
+                if (competitor.Level == "3e Kyu" || competitor.Level == "2e Kyu")
                 {
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "BrownKataMixed");
-                    //als de discipline niet bestaat voeg ze toe
-                    if (category == null)
+                    if (competitor.Disciplines == "Kata & Kumite" || competitor.Disciplines == "Kata")
                     {
-                        category = new Category { Discipline = "BrownKataMixed" };
-                        _context.Category.Add(category);
-                        _context.SaveChanges();
+                        var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "BrownKataMixed");
+                        //als de discipline niet bestaat voeg ze toe
+                        if (category == null)
+                        {
+                            category = new Category { Discipline = "BrownKataMixed" };
+                            _context.Category.Add(category);
+                            _context.SaveChanges();
+                        }
+                        //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                        SaveCompetitorCategoryToJoinTable(competitor, category);
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
                 }
             }
             #endregion
@@ -680,7 +691,7 @@ namespace TheDynamicKarateCupV2.Services
             {
                 if (competitor.Disciplines == "Kata & Kumite" || competitor.Disciplines == "Kata")
                 {
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "OpenKataLadies");
+                    var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "OpenKataLadies");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -688,8 +699,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
             }
 
@@ -706,8 +717,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
             }
             #endregion
@@ -718,7 +729,7 @@ namespace TheDynamicKarateCupV2.Services
             {
                 if (competitor.Disciplines == "Kata & Kumite" || competitor.Disciplines == "Kumite")
                 {
-                    var category = _context.Category.AsNoTracking().Single(c => c.Discipline == "OpenKumiteLadies");
+                    var category = _context.Category.AsNoTracking().SingleOrDefault(c => c.Discipline == "OpenKumiteLadies");
                     //als de discipline niet bestaat voeg ze toe
                     if (category == null)
                     {
@@ -726,8 +737,8 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
             }
 
@@ -744,22 +755,22 @@ namespace TheDynamicKarateCupV2.Services
                         _context.Category.Add(category);
                         _context.SaveChanges();
                     }
-                    //voeg de categorie toe aan de competitor
-                    competitor.CompetitorCategories.Add(AddCompetitorCategorieToJoinClass(competitor, category));
+                    //voeg de categorie toe aan de competitor en save deze in CompetitorCategory        
+                    SaveCompetitorCategoryToJoinTable(competitor, category);
                 }
             }
             #endregion
 
         }
 
-        private CompetitorCategory AddCompetitorCategorieToJoinClass(Competitor competitor, Category category)
+        private void SaveCompetitorCategoryToJoinTable(Competitor competitor, Category category)
         {
             var cc = new CompetitorCategory();
-            cc.Competitor = competitor;
             cc.CompetitorID = competitor.CompetitorID;
-            cc.Category = category;
             cc.CategoryID = category.CategoryID;
-            return cc;
+
+            _context.Set<CompetitorCategory>().Add(cc);
+            _context.SaveChanges();
         }
         #endregion
     }

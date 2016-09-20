@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Reports";
+}
+
+<br />
+<br />
+<div class="row text-center">
+    <div class="col-md-12">
+        <a asp-controller="Report" asp-action="GetClubs" class="btn btn-primary btn-lg">Info subscribed clubs</a>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="col-md-12">
+        <a asp-controller="Report" asp-action="GetCategoriesCompetitors" class="btn btn-primary btn-lg">Get all competitors by category</a>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="col-md-12">
+        <a asp-controller="Report" asp-action="GetClubsWithCompetitors" class="btn btn-primary btn-lg">Get all clubs with their competitors</a>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="col-md-12">
+        <a asp-controller="Report" asp-action="GetClubsWithCoaches" class="btn btn-primary btn-lg">Get all clubs with their coaches</a>
+    </div>
+</div>

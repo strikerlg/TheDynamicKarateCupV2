@@ -9,7 +9,7 @@
 <form asp-action="Edit">
     <div class="form-horizontal">
         <hr />
-        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="ClubID" />
         <div class="form-group">
             <label asp-for="ClubName" class="col-md-2 control-label"></label>
@@ -42,11 +42,16 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="hidden" asp-for="ClubNumber" />
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="   Update   " class="btn btn-default" />
             </div>
         </div>
     </div>
 </form>
+
+<a asp-action="WhatToDoNow" asp-controller="Verify" asp-route-clubID="@Model.ClubID" class="btn btn-primary col-md-offset-2 col-md-1">Return</a>
+
+<br />
+<br />
 
 @section Scripts {
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

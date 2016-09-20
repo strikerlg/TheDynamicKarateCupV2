@@ -1,8 +1,8 @@
-using System;
-using Microsoft.Data.Entity;
-using Microsoft.Data.Entity.Infrastructure;
-using Microsoft.Data.Entity.Metadata;
-using Microsoft.Data.Entity.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using TheDynamicKarateCupV2.Models;
 
 namespace TheDynamicKarateCupV2.Migrations
@@ -13,10 +13,10 @@ namespace TheDynamicKarateCupV2.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
+                .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
                 {
                     b.Property<string>("Id");
 
@@ -32,12 +32,12 @@ namespace TheDynamicKarateCupV2.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
-                        .HasAnnotation("Relational:Name", "RoleNameIndex");
+                        .HasName("RoleNameIndex");
 
-                    b.HasAnnotation("Relational:TableName", "AspNetRoles");
+                    b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -51,10 +51,12 @@ namespace TheDynamicKarateCupV2.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasAnnotation("Relational:TableName", "AspNetRoleClaims");
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -68,10 +70,12 @@ namespace TheDynamicKarateCupV2.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasAnnotation("Relational:TableName", "AspNetUserClaims");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider");
 
@@ -84,10 +88,12 @@ namespace TheDynamicKarateCupV2.Migrations
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
-                    b.HasAnnotation("Relational:TableName", "AspNetUserLogins");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId");
 
@@ -95,7 +101,26 @@ namespace TheDynamicKarateCupV2.Migrations
 
                     b.HasKey("UserId", "RoleId");
 
-                    b.HasAnnotation("Relational:TableName", "AspNetUserRoles");
+                    b.HasIndex("RoleId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId");
+
+                    b.Property<string>("LoginProvider");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens");
                 });
 
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.ApplicationUser", b =>
@@ -138,12 +163,13 @@ namespace TheDynamicKarateCupV2.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
-                        .HasAnnotation("Relational:Name", "EmailIndex");
+                        .HasName("EmailIndex");
 
                     b.HasIndex("NormalizedUserName")
-                        .HasAnnotation("Relational:Name", "UserNameIndex");
+                        .IsUnique()
+                        .HasName("UserNameIndex");
 
-                    b.HasAnnotation("Relational:TableName", "AspNetUsers");
+                    b.ToTable("AspNetUsers");
                 });
 
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.Category", b =>
@@ -154,6 +180,8 @@ namespace TheDynamicKarateCupV2.Migrations
                     b.Property<string>("Discipline");
 
                     b.HasKey("CategoryID");
+
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.Club", b =>
@@ -177,6 +205,8 @@ namespace TheDynamicKarateCupV2.Migrations
                         .IsRequired();
 
                     b.HasKey("ClubID");
+
+                    b.ToTable("Club");
                 });
 
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.Coach", b =>
@@ -189,12 +219,17 @@ namespace TheDynamicKarateCupV2.Migrations
                     b.Property<string>("CoachFirstName")
                         .IsRequired();
 
-                    b.Property<string>("CoachFirstNameName");
-
                     b.Property<string>("CoachName")
                         .IsRequired();
 
+                    b.Property<string>("LicenseNumber")
+                        .IsRequired();
+
                     b.HasKey("CoachID");
+
+                    b.HasIndex("ClubID");
+
+                    b.ToTable("Coach");
                 });
 
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.Competitor", b =>
@@ -226,6 +261,10 @@ namespace TheDynamicKarateCupV2.Migrations
                         .IsRequired();
 
                     b.HasKey("CompetitorID");
+
+                    b.HasIndex("ClubID");
+
+                    b.ToTable("Competitor");
                 });
 
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.CompetitorCategory", b =>
@@ -235,63 +274,78 @@ namespace TheDynamicKarateCupV2.Migrations
                     b.Property<int>("CategoryID");
 
                     b.HasKey("CompetitorID", "CategoryID");
+
+                    b.HasIndex("CategoryID");
+
+                    b.HasIndex("CompetitorID");
+
+                    b.ToTable("CompetitorCategory");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNet.Identity.EntityFramework.IdentityRole")
-                        .WithMany()
-                        .HasForeignKey("RoleId");
+                    b.HasOne("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole")
+                        .WithMany("Claims")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserClaim<string>", b =>
                 {
                     b.HasOne("TheDynamicKarateCupV2.Models.ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                        .WithMany("Claims")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserLogin<string>", b =>
                 {
                     b.HasOne("TheDynamicKarateCupV2.Models.ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                        .WithMany("Logins")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNet.Identity.EntityFramework.IdentityRole")
-                        .WithMany()
-                        .HasForeignKey("RoleId");
+                    b.HasOne("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole")
+                        .WithMany("Users")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("TheDynamicKarateCupV2.Models.ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                        .WithMany("Roles")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.Coach", b =>
                 {
-                    b.HasOne("TheDynamicKarateCupV2.Models.Club")
-                        .WithMany()
-                        .HasForeignKey("ClubID");
+                    b.HasOne("TheDynamicKarateCupV2.Models.Club", "Club")
+                        .WithMany("Coaches")
+                        .HasForeignKey("ClubID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.Competitor", b =>
                 {
-                    b.HasOne("TheDynamicKarateCupV2.Models.Club")
-                        .WithMany()
-                        .HasForeignKey("ClubID");
+                    b.HasOne("TheDynamicKarateCupV2.Models.Club", "Club")
+                        .WithMany("Competitors")
+                        .HasForeignKey("ClubID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("TheDynamicKarateCupV2.Models.CompetitorCategory", b =>
                 {
-                    b.HasOne("TheDynamicKarateCupV2.Models.Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryID");
+                    b.HasOne("TheDynamicKarateCupV2.Models.Category", "Category")
+                        .WithMany("CompetitorCategories")
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("TheDynamicKarateCupV2.Models.Competitor")
-                        .WithMany()
-                        .HasForeignKey("CompetitorID");
+                    b.HasOne("TheDynamicKarateCupV2.Models.Competitor", "Competitor")
+                        .WithMany("CompetitorCategories")
+                        .HasForeignKey("CompetitorID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

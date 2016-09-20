@@ -1,0 +1,8 @@
+﻿02:12:55.8718: Referenced file '~/lib/jquery/dist/jquery.js' not found.
+02:12:55.8718: Referenced file '~/lib/bootstrap/dist/js/bootstrap.js' not found.
+02:12:55.8718: Referenced file '~/js/site.js' not found.
+02:12:55.8754: Downloading referenced file 'https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js'...
+02:12:55.8813: Downloading referenced file 'https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js'...
+02:12:55.8813: Referenced file '~/js/site.min.js' not found.
+02:12:57.0281: 'https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js' download completed.
+02:12:57.0906: 'https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js' download completed.

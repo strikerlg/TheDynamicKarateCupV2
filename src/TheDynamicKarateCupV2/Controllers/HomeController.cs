@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Authorization;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TheDynamicKarateCupV2.Controllers
 {
@@ -16,23 +12,20 @@ namespace TheDynamicKarateCupV2.Controllers
         }
 
         [AllowAnonymous]
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        [AllowAnonymous]
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
         [AllowAnonymous]
         public IActionResult Error()
+        {
+            return View();
+        }
+
+
+        [Authorize(Policy = "ReportManagement")]
+        public IActionResult Reports()
         {
             return View();
         }

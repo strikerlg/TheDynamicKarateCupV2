@@ -1,0 +1,10 @@
+﻿PATH=.\node_modules\.bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External;%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External\git
+C:\Program Files\dotnet\dotnet.exe restore "C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\.vs\restore.dg"
+error: Error reading 'C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\project.json' at line 5 column 28 : Package dependencies must specify a version range.
+error:   Package dependencies must specify a version range.
+PATH=.\node_modules\.bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External;%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External\git
+C:\Program Files\dotnet\dotnet.exe restore "C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\.vs\restore.dg"
+log  : Restoring packages for C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\project.json...
+log  : Lock file has not changed. Skipping lock file write. Path: C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\project.lock.json
+log  : C:\Users\tomva\documents\visual studio 2015\Projects\TheDynamicKarateCupV2\src\TheDynamicKarateCupV2\TheDynamicKarateCupV2.xproj
+log  : Restore completed in 45640ms.

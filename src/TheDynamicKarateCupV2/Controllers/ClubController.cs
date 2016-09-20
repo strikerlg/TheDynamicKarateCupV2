@@ -1,7 +1,4 @@
-using System.Linq;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
+using Microsoft.AspNetCore.Mvc;
 using TheDynamicKarateCupV2.Models;
 using TheDynamicKarateCupV2.Services;
 
@@ -27,7 +24,7 @@ namespace TheDynamicKarateCupV2.Controllers
         // POST: Club/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Club club)
+        public IActionResult Create([Bind("ClubName, ResponsibleName, ResponsibleCellullar, ResponsibleEmail, ClubNumber")] Club club)
         {
             if (ModelState.IsValid)
             {
@@ -50,7 +47,7 @@ namespace TheDynamicKarateCupV2.Controllers
                 Club club = clubServices.GetClub(clubID);
                 if (club == null)
                 {
-                    return HttpNotFound();
+                    return NotFound();
                 }
                 return View(club);
             }
@@ -63,7 +60,7 @@ namespace TheDynamicKarateCupV2.Controllers
         // POST: Club/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Club club)
+        public IActionResult Edit([Bind("ClubID, ClubName, ResponsibleName, ResponsibleCellullar, ResponsibleEmail, ClubNumber")] Club club)
         {
             if (ModelState.IsValid)
             {
